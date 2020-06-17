@@ -31,7 +31,6 @@ class CustomerForm extends React.Component{
             email:'',
             mobile:''
         })
-        //console.log(formData)
     }
 
    

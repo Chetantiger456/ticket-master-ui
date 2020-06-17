@@ -13,11 +13,9 @@ class Departments extends React.Component{
     }
 
     render(){
-        //console.log(this.props.departments)
         return(
             <div>
                 <h2>Departments list - {this.props.departments.length}</h2>
-              
                 <DepartmentItem />
                 <DepartmentForm />
             </div>
