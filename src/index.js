@@ -1,16 +1,16 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDOM from 'react-dom' 
 import App from './App'
-
-
-import configureStore from './stores/configureStore'
 import { Provider } from 'react-redux'
+
+import configureStore from './store/configureStore'
 import { startGetUser } from './actions/userAction'
-import { startGetDepartments } from './actions/departmentAction'
-//import { startGetCustomers } from './actions/customerAction'
+import { startGetCustomers } from './actions/customersAction'
+import { startGetDepartments } from './actions/departmentsAction'
+import { startGetEmployees } from './actions/employeesAction'
+import { startGetTickets } from './actions/ticketsAction'
 
-const store = configureStore()
-
+const store = configureStore() 
 console.log(store.getState())
 
 store.subscribe(() => {
@@ -18,16 +18,18 @@ store.subscribe(() => {
 })
 
 // handle page reload
-if(localStorage.getItem('authToken')){
+if(localStorage.getItem('authToken')) {
     store.dispatch(startGetUser())
-    //store.dispatch(startGetCustomers())
-   // store.dispatch(startGetDepartments())
+    store.dispatch(startGetCustomers())
+    store.dispatch(startGetDepartments())
+    store.dispatch(startGetEmployees())
+    store.dispatch(startGetTickets())
 }
 
 const jsx = (
-    <Provider store = {store}>
+    <Provider store={store}>
         <App />
     </Provider>
 )
 
-ReactDom.render(jsx, document.getElementById('root'))
+ReactDOM.render(jsx, document.getElementById('root'))

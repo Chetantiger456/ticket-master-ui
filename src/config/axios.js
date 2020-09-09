@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const axios = Axios.create({
-    baseURL : 'http://dct-tm.herokuapp.com/api'
+    baseURL: 'http://localhost:3005/api'
 })
 
 export default axios

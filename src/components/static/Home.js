@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react' 
 
-function Home(props){
-    return(
+function Home(props){ 
+    return (
         <div>
-            Welcome to the react master app
+            Welcome to the ticket master app
         </div>
     )
 }
 
-export default Home 
+export default Home
